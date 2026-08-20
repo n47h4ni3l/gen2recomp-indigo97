@@ -55,13 +55,11 @@ run again.
 
 - Gen2Recomped `0.7.6` through the last `0.x` release.
 - Mod API 2.
-- Designed to compose with Voxel Characters 1.8.1+.
-- Conflicts with the earlier private `retro_anime_trainer` prototype; keep only
-  one enabled.
+- Designed to compose with Voxel Characters 1.8.1+ but is still optimised as a stand-alone.
 
 ## Credits
 
-- **n47h4ni3l**: concept, art direction and Steam Deck field testing.
+- **n47h4ni3l**: concept, art direction and testing.
 - **OpenAI Codex**: implementation and packaging assistance.
 - **Gen2Recomped contributors**: mod API, asset-transform system and tooling.
 
