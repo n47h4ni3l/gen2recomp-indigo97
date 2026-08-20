@@ -1,11 +1,17 @@
 # INDIGO//97
 
-INDIGO//97 gives the Gen 2 boy player a late-1990s anime-inspired true-colour
-overworld design while preserving the cartridge's original animation timing.
+INDIGO//97 gives both Gen 2 player characters late-1990s anime-inspired
+true-colour overworld designs while preserving the cartridge's original
+animation timing.
 
 Red-and-white cap. Dark hair. Blue jacket. Green gloves and backpack. Pale
 jeans. Red trainers. It is deliberately vivid enough to belong in Dramatic
 Shape's diorama world without losing the chunky 16-pixel character language.
+
+Crystal's heroine gets a complementary Cerulean-era design: orange hair with
+auburn shading, a yellow top with red accents, denim-blue shorts, red shoes and
+a teal backpack. Her original silhouette and all six animation frames remain
+intact.
 
 ## Install
 
@@ -35,10 +41,12 @@ Suggested Voxel Characters settings:
 
 - Boy-player walking frames in Gold, Silver and Crystal.
 - Boy-player bicycle frames in Gold, Silver and Crystal.
+- Crystal heroine walking frames.
+- Crystal heroine bicycle frames.
 - Colour only: movement, collision, saves and game data are untouched.
 
-The Crystal girl, fishing poses, trainer-card portrait and battle portrait are
-not changed in 1.0.0.
+Fishing poses, trainer-card portraits and battle portraits are not changed in
+1.1.0.
 
 ## ROM-safe by design
 
@@ -55,7 +63,8 @@ run again.
 
 - Gen2Recomped `0.7.6` through the last `0.x` release.
 - Mod API 2.
-- Designed to compose with Voxel Characters 1.8.1+ but is still optimised as a stand-alone.
+- Designed to compose with Voxel Characters 1.8.1+ but is still optimised as a
+  stand-alone.
 
 ## Credits
 
@@ -66,3 +75,4 @@ run again.
 INDIGO//97 is an unofficial fan-made mod. Pokémon and the underlying game
 artwork belong to their respective owners. A legally obtained compatible ROM
 and Gen2Recomped are required; neither is distributed here.
+
