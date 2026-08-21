@@ -47,7 +47,7 @@ Suggested Voxel Characters settings:
 - Crystal heroine fishing poses.
 - Colour only: movement, collision, saves and game data are untouched.
 
-Trainer-card portraits and battle portraits are not changed in 1.2.0.
+Trainer-card portraits and battle portraits are not changed in 1.2.1.
 
 ## ROM-safe by design
 
