@@ -17,6 +17,49 @@ Data.sprites.SPRITE_KRIS_BIKE = {
   id = "SPRITE_KRIS_BIKE", image = "sprites/krisbike.png", frames = 6,
 }
 
+local STORY_SPRITES = {
+  { "SPRITE_SILVER", "sprites/rival.png" },
+  { "SPRITE_OAK", "sprites/oak.png" },
+  { "SPRITE_RED_KANTO", "sprites/red.png" },
+  { "SPRITE_BLUE", "sprites/blue.png" },
+  { "SPRITE_BILL", "sprites/bill.png" },
+  { "SPRITE_ELDER", "sprites/elder.png" },
+  { "SPRITE_KURT", "sprites/kurt.png" },
+  { "SPRITE_MOM", "sprites/mom.png" },
+  { "SPRITE_ELM", "sprites/elm.png" },
+  { "SPRITE_WILL", "sprites/will.png" },
+  { "SPRITE_FALKNER", "sprites/falkner.png" },
+  { "SPRITE_WHITNEY", "sprites/whitney.png" },
+  { "SPRITE_BUGSY", "sprites/bugsy.png" },
+  { "SPRITE_MORTY", "sprites/morty.png" },
+  { "SPRITE_CHUCK", "sprites/chuck.png" },
+  { "SPRITE_JASMINE", "sprites/jasmine.png" },
+  { "SPRITE_PRYCE", "sprites/pryce.png" },
+  { "SPRITE_CLAIR", "sprites/clair.png" },
+  { "SPRITE_BROCK", "sprites/brock.png" },
+  { "SPRITE_KAREN", "sprites/karen.png" },
+  { "SPRITE_BRUNO", "sprites/bruno.png" },
+  { "SPRITE_MISTY", "sprites/misty.png" },
+  { "SPRITE_LANCE", "sprites/lance.png" },
+  { "SPRITE_SURGE", "sprites/surge.png" },
+  { "SPRITE_ERIKA", "sprites/erika.png" },
+  { "SPRITE_KOGA", "sprites/koga.png" },
+  { "SPRITE_SABRINA", "sprites/sabrina.png" },
+  { "SPRITE_JANINE", "sprites/janine.png" },
+  { "SPRITE_BLAINE", "sprites/blaine.png" },
+  { "SPRITE_ROCKET", "sprites/rocket.png" },
+  { "SPRITE_ROCKET_GIRL", "sprites/rocketgirl.png" },
+  { "SPRITE_KIMONO_GIRL", "sprites/kimonogirl.png" },
+  { "SPRITE_NURSE", "sprites/nurse.png" },
+  { "SPRITE_CLERK", "sprites/clerk.png" },
+}
+
+for _, pair in ipairs(STORY_SPRITES) do
+  Data.sprites[pair[1]] = {
+    id = pair[1], image = pair[2], frames = 6, walker = true,
+  }
+end
+
 local MOD = "mods/examples/indigo_97"
 
 local function noCacheFs()
@@ -66,6 +109,12 @@ for _, id in ipairs({
   T.check(sprite ~= nil, id .. " remains registered")
   T.eq(sprite.trueColor, true, id .. " opts out of the world shade remap")
   T.check(sprite.image ~= nil and sprite.image ~= "", id .. " keeps its source path")
+end
+
+for _, pair in ipairs(STORY_SPRITES) do
+  local sprite = Data.sprites[pair[1]]
+  T.eq(sprite.trueColor, true, pair[1] .. " opts out of the world shade remap")
+  T.eq(sprite.image, pair[2], pair[1] .. " keeps the imported image path")
 end
 
 local function fakeImage(width, height, initial)
@@ -133,6 +182,9 @@ T.check(written["sprites/chrisbike.png"] ~= nil, "writes the bicycle sheet")
 T.check(written["sprites/kris.png"] ~= nil, "writes the Crystal walking sheet")
 T.check(written["sprites/krisbike.png"] ~= nil,
   "writes the Crystal bicycle sheet")
+for _, pair in ipairs(STORY_SPRITES) do
+  T.check(written[pair[2]] ~= nil, "writes " .. pair[2])
+end
 for _, rel in ipairs({
     "fx/gen2_fish_down.png", "fx/gen2_fish_up.png",
     "fx/gen2_fish_side.png",
@@ -198,6 +250,45 @@ local er, eg, eb = girl:getPixel(7, 14)
 T.check(er > eg and er > eb, "Crystal heroine receives red shoes")
 local tr, tg, tb = girl:getPixel(7, 16 + 10)
 T.check(tg > tb and tb > tr, "Crystal heroine receives a teal backpack")
+
+local silver = written["sprites/rival.png"]
+local siR, siG, siB = silver:getPixel(7, 2)
+T.check(siR > siG and siR > siB,
+  "Silver receives his anime-red hair")
+local oak = written["sprites/oak.png"]
+local oaR, oaG, oaB = oak:getPixel(7, 16 + 10)
+T.check(oaR > 0.7 and oaG > 0.7 and oaB > 0.7,
+  "Professor Oak receives his pale lab coat")
+local falkner = written["sprites/falkner.png"]
+local faR, faG, faB = falkner:getPixel(5, 10)
+T.check(faB > faR and faB > faG,
+  "Falkner receives his blue anime outfit")
+local lance = written["sprites/lance.png"]
+local laR, laG, laB = lance:getPixel(7, 16 + 10)
+T.check(laR > laG and laR > laB,
+  "Lance's rear frame receives his red cape")
+
+local nurse = written["sprites/nurse.png"]
+local ncR, ncG, ncB = nurse:getPixel(7, 2)
+T.check(ncR > ncG and ncR > ncB,
+  "Nurse Joy's cap keeps its red medical mark")
+local nhR, nhG, nhB = nurse:getPixel(6, 3)
+T.check(nhR > nhG and nhB > nhG,
+  "Nurse Joy receives pink hair")
+local naR, naG, naB = nurse:getPixel(7, 10)
+T.check(naR > 0.7 and naG > 0.7 and naB > 0.7,
+  "Nurse Joy receives a pale apron")
+
+local clerk = written["sprites/clerk.png"]
+local ccR, ccG, ccB = clerk:getPixel(7, 2)
+T.check(ccG > ccR and ccG > ccB,
+  "the mart clerk receives a green cap")
+local cbR, cbG, cbB = clerk:getPixel(7, 10)
+T.check(cbR > cbB and cbG > cbB,
+  "the mart clerk receives a gold badge")
+local cpR, cpG, cpB = clerk:getPixel(7, 14)
+T.check(cpB > cpR and cpB > cpG,
+  "the mart clerk receives navy trousers")
 
 local boyFish = written["fx/chris_fish_down.png"]
 local bfr, bfg, bfb = boyFish:getPixel(6, 3)
@@ -285,3 +376,4 @@ T.eq(crystalOnly["sprites/kris_bike.png"], nil,
 
 run.release()
 T.finish("indigo_97")
+
