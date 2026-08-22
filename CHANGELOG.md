@@ -2,6 +2,30 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 1.5.0 - 2026-08-22
+
+### Added
+
+- Individual true-colour profiles for the named Johto story cast, all Johto
+  Gym Leaders, all returning Kanto Gym Leaders, the Elite Four and Champion
+  Lance.
+- Anime-era palettes for Silver, Professors Oak and Elm, Mom, Bill, Kurt,
+  Team Rocket and the Kimono Girls.
+- Nurse Joy's pink hair, white cap and apron across Pokémon Centers.
+- Green-and-cream Poké Mart clerks with a gold badge and navy trousers.
+
+### Changed
+
+- INDIGO//97 is now presented and packaged as a fully independent character
+  recolour; its previous optional character-mod dependency and recommendations
+  have been removed.
+
+### Preserved
+
+- The 1.2.1 player, bicycle and fishing transforms remain unchanged.
+- Every output retains the ROM-imported silhouette, frame count and animation
+  timing. Trainer-card and battle portraits remain unchanged.
+
 ## 1.2.1 - 2026-08-21
 
 ### Fixed
@@ -53,5 +77,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Late-1990s anime-inspired true-colour treatment for the Gen 2 boy player.
 - Walking and bicycle support across Gold, Silver and the boy route in Crystal.
 - ROM-safe first-load transform; no extracted game artwork is distributed.
-- Optional Voxel Characters integration and recommended visual settings.
+- Independent true-colour character rendering with no required character mod.
 - GitHub update metadata and automated installable release packaging.
+

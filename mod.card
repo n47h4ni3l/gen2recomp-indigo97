@@ -1,5 +1,5 @@
 return {
-  summary = "Late-90s anime colour for both Gen 2 player characters, generated from your ROM cache.",
+  summary = "Late-90s anime colour for Gen 2 players, story cast and service characters, generated from your ROM cache.",
   author = "n47h4ni3l",
   contact = "https://github.com/n47h4ni3l/gen2recomp-indigo97",
   tags = { "cosmetic", "graphics", "gen2" },
@@ -10,13 +10,16 @@ return {
       "SPRITE_KRIS and SPRITE_KRIS_BIKE render as true-colour art",
       "Crystal heroine walking and bicycle sheets receive a Cerulean-era colour design",
       "boy and Crystal heroine fishing poses match their INDIGO//97 designs",
+      "named Johto and Kanto story characters receive individual anime-era palettes",
+      "Nurse Joy receives pink hair, a white cap and a pale apron",
+      "Poké Mart clerks receive a green-and-cream uniform and navy trousers",
     },
     added = {
       "a first-load asset transform that writes only to save/mod-derived/indigo_97",
     },
     known = {
       "trainer-card portraits and battle portraits are unchanged",
-      "Voxel Characters is optional and required only for block-built depth",
+      "INDIGO//97 has no required or optional character-mod dependency",
     },
   },
   credits = {
@@ -26,3 +29,4 @@ return {
   },
   compat = { engine = ">=0.7.6 <1.0.0", modApi = 2 },
 }
+
